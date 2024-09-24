@@ -1,2 +1,2 @@
 # drone-introduce
-For schoool
+For schoool project

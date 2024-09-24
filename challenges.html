@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenges</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/draws.css">
+    <link rel="icon" href="drone_icon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+    <nav>
+        <ul class="nav-items">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="speech.html">My speech</a></li>
+            <li><a href="challenges.html">Challenges</a></li>
+            <li><a href="rates.html">Rates</a></li>
+        </ul>
+        <div class="nav-buttons">
+            <a href="#" class="nav-btn login-btn">Log in</a>
+            <a href="#" class="nav-btn signup-btn">Sign up</a>
+        </div>
+    </nav>
+
+    <div class="draw-area">
+        <button class="draw-button" data-challenge="1">Challenge 1</button>
+        <button class="draw-button" data-challenge="2">Challenge 2</button>
+        <button class="draw-button" data-challenge="3">Challenge 3</button>
+        <button class="draw-button" data-challenge="4">Challenge 4</button>
+    </div>
+    
+    <!-- Content sections for each challenge, hidden initially -->
+    <div id="challenge1" class="cs hidden">
+        <h2>Challenge 1: Navigation Task</h2>
+        <p><strong>Description:</strong> You need to fly the drone through a series of hoops without hitting any obstacles. This challenge tests your control and precision in flight.</p>
+        <p><strong>Evaluation:</strong> Success is measured by how accurately you can fly through the hoops. <strong>Accuracy and stability</strong> are crucial here.</p>
+        <div class="code-container">
+            <pre><code class="language-python">
+import djitellopy
+import time
+
+tello = djitellopy.Tello()
+tello.connect()
+tello.takeoff()
+
+height = tello.get_height()
+
+tello.move_up(50)
+
+tello.move_forward(25)
+tello.rotate_counter_clockwise(90)
+tello.move_forward(25)
+for i in range(2):
+    time.sleep(1)
+    tello.move_forward(50)
+tello.rotate_clockwise(90)
+time.sleep(1)
+tello.move_forward(50)
+tello.rotate_clockwise(90)
+for i in range(2):
+    time.sleep(1)
+    tello.move_forward(50)
+tello.rotate_counter_clockwise(90)
+time.sleep(1)
+tello.move_forward(50)
+tello.rotate_counter_clockwise(90)
+for i in range(2):
+    time.sleep(1)
+    tello.move_forward(50)
+tello.land()
+            </code></pre>
+        </div>
+        <iframe src="https://drive.google.com/file/d/1A1zltqhAVaKb5fhy82fXk_GszT9PUFVf/preview" width="640" height="480" allow="autoplay"></iframe>
+    </div>
+    
+    <div id="challenge2" class="cs hidden">
+        <h2>Challenge 2: Speed Test</h2>
+        <p><strong>Description:</strong> Fly the drone as fast as possible through a straight path. This task will evaluate how fast you can go without losing control.</p>
+        <p><strong>Evaluation:</strong> The key performance indicator is the speed of flight while maintaining <strong>control and safety</strong>. The time it takes to complete the course is the main metric.</p>
+        <div class="code-container">
+            <pre><code class="language-python">
+import djitellopy
+import time
+
+tello = djitellopy.Tello()
+tello.connect()
+tello.takeoff()
+
+height = tello.get_height()
+
+if height >= 200:
+    tello.move_down(height-220)
+
+distance = 150
+numpadid = 0
+#distance = int(input("How far would you go(<= 200): "))
+#numpadid = int(input("Numpadid(1-8)0 for free: "))
+if distance >= 200:
+    tello.move_forward(200)
+else:
+    tello.move_forward(distance)
+numpadid_get = tello.get_mission_pad_id()
+if 1 <= numpadid <= 8:
+    if numpadid_get == numpadid:
+        tello.land()
+    else:
+        print("MISSION FAILED")
+        tello.land()
+else:
+    tello.land()
+            </code></pre>
+        </div>
+        <iframe src="https://drive.google.com/file/d/1OU22rg46sPFFX4h5P5609QfapSxStbIR/preview" width="640" height="480" allow="autoplay"></iframe>
+    </div>
+    
+    <div id="challenge3" class="cs hidden">
+        <h2>Challenge 3: Aerial Photography</h2>
+        <p><strong>Description:</strong> Capture stunning images from above. The goal here is to combine stability in flight with photography skills.</p>
+        <p><strong>Evaluation:</strong> The quality of the captured images is the main focus. Good images require <strong>smooth and stable flight</strong> and proper use of the camera.</p>
+        <div class="code-container">
+            <pre><code class="language-python">
+import djitellopy
+import time
+
+tello = djitellopy.Tello()
+tello.connect()
+
+tello.takeoff()
+tello.set_speed(100)
+
+#CBM = crazy basic movement
+def CBM():
+    tello.move_up(50)
+    tello.rotate_clockwise(45)
+    tello.move_down(50)
+    tello.rotate_clockwise(45)
+    tello.move_left(50)
+    tello.rotate_clockwise(45)
+    tello.move_right(50)
+    tello.rotate_clockwise(45)
+
+#CAM = Crazy advanced movement
+def CAM():
+    tello.move_up(250)
+    tello.move_forward(50)
+    tello.move_left(50)
+    tello.move_back(50)
+    tello.move_right(50)
+    tello.move_forward(50)
+    tello.move_right()
+
+#CFM = chill fun movement
+def CFM():
+    tello.rotate_clockwise(90)
+    tello.rotate_counter_clockwise(90)
+    tello.rotate_clockwise(90)
+    tello.rotate_counter_clockwise(90)
+    tello.move_back(100)
+    tello.move_forward(200)
+    tello.move_back()
+
+CAM()
+tello.land()
+            </code></pre>
+        </div>
+        <iframe src="https://drive.google.com/file/d/1oWOz3OAtKpb1sUz42Q8VrneoPA5xKwIm/preview" width="640" height="480" allow="autoplay"></iframe>
+    </div>
+    
+    <div id="challenge4" class="cs hidden">
+        <h2>Challenge 4: Obstacle Course</h2>
+        <p><strong>Description:</strong> Fly the drone through a challenging obstacle course, testing your ability to avoid collisions in a complex environment.</p>
+        <p><strong>Evaluation:</strong> The drone's <strong>maneuverability</strong> and your ability to navigate tight spaces are critical. Success is measured by how well you avoid obstacles.</p>
+        <div class="code-container">
+            <pre><code class="language-python">
+import djitellopy
+
+tello = djitellopy.Tello()
+tello.connect()
+tello.takeoff()
+
+tello.move_down(50)
+tello.move_forward(70)
+tello.move_right(50)
+tello.move_forward(100)
+tello.move_left(50)
+tello.move_up(40)
+
+tello.move_forward(70)
+
+for i in range(2):
+    tello.move_right(80)
+    tello.move_back(100)
+    tello.move_left(80)
+    tello.move_forward(100)
+
+tello.move_forward(100)
+
+tello.move_down(20)
+tello.move_left(40)
+tello.move_down(40)
+tello.move_right(80)
+tello.move_up(40)
+tello.move_left(80)
+tello.move_down(40)
+tello.move_right(80)
+tello.move_up(40)
+
+tello.move_right(20)
+tello.move_forward(40)
+tello.move_down(20)
+tello.move_right(40)
+tello.move_back(150)
+
+tello.land()
+            </code></pre>
+        </div>
+        <iframe src="https://drive.google.com/file/d/14dezwGd5HPVhnqlrRerRE3Z359kAGXRP/preview" width="640" height="480" allow="autoplay"></iframe>
+    </div>
+
+    <script src="./js/draws.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="./js/align-num.js"></script>
+</body>
+</html>

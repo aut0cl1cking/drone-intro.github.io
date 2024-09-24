@@ -1,0 +1,193 @@
+/* 整体设置 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #1c1b1b;
+    color: #fff;
+    
+}
+
+.extra_page1 {
+    height: 100vh; /* Full screen height for each section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #2e2c2c;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent; /* Keep transparent for now */
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly flatter color */
+    padding: 0px 15px; /* Reduced padding */
+    border-radius: 16px; /* Less rounded corners */
+    width: 80%; /* Adjusted width */
+    max-width: 1100px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Logo and Navigation Items */
+.nav-logo img {
+    height: 40px; /* Slightly larger logo */
+}
+
+.nav-logo span {
+    margin-left: 100px;
+    color: #fff;
+    font-size: 22px; /* Make the text bigger */
+    font-weight: bold;
+}
+
+/* Navigation Items */
+.nav-items {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 30px; /* More space between items */
+}
+
+.nav-items li a {
+    text-decoration: none;
+    color: #c4c1c1;
+    font-size: 15px; /* Bigger text */
+    padding: 10px 15px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.nav-items li a:hover {
+    color: #d6e0e3; /* Neon-style hover color */
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 10px; /* Reduced gap for a tighter layout */
+}
+
+.login-btn, .signup-btn {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px; /* Bigger font size */
+    padding: 10px 20px; /* More padding for the buttons */
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.signup-btn {
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+    font-weight: bold;
+    padding: 5px 10px; /* Adjust padding for a slimmer look */
+}
+
+.signup-btn:hover {
+    background-color: #333; /* Darker on hover */
+    color: #fff; /* White text on hover */
+}
+
+.login-btn {
+    color: #ccc;
+    background-color: transparent;
+    border: 1px solid #444;
+    padding: 5px 10px; 
+}
+
+.login-btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 1001;
+}
+
+/* Dropdown Items */
+.dropdown-menu a {
+    color: #ccc;
+    padding: 8px 15px;
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #333;
+    color: #00d1ff;
+}
+
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #181414, #2e2c2c);
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+.intro-text {
+    font-size: 1.3rem;
+    margin: 20px 0;
+    max-width: 800px;
+}
+
+.cta-button {
+    background-color: #47424d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #5d5762;
+}
+
+/* Image section styling */
+.image-section {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.image-section img {
+    max-width: 80%;
+    height: auto;
+}
