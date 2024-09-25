@@ -102,21 +102,48 @@ nav li:hover, .nav-btn:hover {
   margin-top: 150px; 
   color: #2C2F33;
   padding: 0 80px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 150px); /* Adjust this value as needed */
 }
 
-.start-btn {
-  background-color: #222E45;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1.2em;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.part1-btn {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Adds space between buttons */
+  margin-top: auto; /* Pushes buttons to the bottom */
+  padding-bottom: 40px; /* Adds some space at the bottom */
 }
 
-.start-btn:hover {
-  background-color: #4A90E2;
-  color: #fff;
+h1 {
+  font-size: 3.5em;
+  color: #4A90E2;
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #4A90E2, #FF6B35);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+h1:hover::after {
+  transform: scaleX(1);
 }
 
 .started_btn {
@@ -132,6 +159,8 @@ nav li:hover, .nav-btn:hover {
   box-shadow: 0 4px 6px rgba(74, 144, 226, 0.2);
   text-transform: uppercase;
   letter-spacing: 1px;
+  position: relative;
+  z-index: 10;
 }
 
 .started_btn:hover {
@@ -160,3 +189,75 @@ nav li:hover, .nav-btn:hover {
     box-shadow: 0 0 0 0 rgba(74, 144, 226, 0);
   }
 }
+
+.intro-container {
+  background-color: rgba(44, 174, 255, 0.3); /* Slightly more opaque light sky blue background */
+  border-radius: 15px;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 600px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid #4FB0FF; /* Brighter blue border */
+}
+
+.intro-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(79, 176, 255, 0.3);
+  background-color: rgba(135, 206, 250, 0.4); /* Slightly darker on hover, but still bright */
+}
+
+.intro-text {
+  font-size: 1.8em;
+  color: #5d80e0; /* Brighter, more saturated blue for main text */
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.intro-subtext {
+  font-size: 1.2em;
+  color: #307df8; /* Bright blue for subtext */
+  text-align: center;
+  font-style: italic;
+}
+
+.highlight {
+  color: #FF6B35; /* Brighter orange for highlight */
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #FF6B35; /* Brighter orange for underline */
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.intro-container:hover .highlight::after {
+  transform: scaleX(1);
+}
+
+.subtext-link {
+    color: inherit; /* 继承父元素的颜色 */
+    text-decoration: none; /* 移除下划线 */
+    font-weight: inherit; /* 继承父元素的字体粗细 */
+    transition: color 0.3s ease;
+}
+
+.subtext-link:hover {
+    color: #FF6B35; /* 悬停时变为亮橙色 */
+}
+
+/* If you want to adjust the space between buttons */
+/* .started_btn + .started_btn {
+    margin-top: 10px; /* Adjust this value for space between buttons */
+} */
