@@ -16,7 +16,14 @@
             greetUser(); // Call greetUser function
         }
     </script>
-    
+    <script>
+        // 在页面加载后添加点击事件监听器
+        window.onload = function() {
+            document.addEventListener('click', function() {
+                window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'; // 跳转到指定链接
+            });
+        };
+    </script>    
     <div id="notification" class="notification" style="display: none;"></div> <!-- Notification div should be here -->
 
     <nav>
