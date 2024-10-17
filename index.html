@@ -7,8 +7,18 @@
     <link rel="stylesheet" href="./CSS/style.css">
     <link rel="icon" href="drone_icon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/greetuser.js"></script>
 </head>
 <body>
+    <script>
+        window.onload = function() { // Ensure the DOM is fully loaded
+            greetUser(); // Call greetUser function
+        }
+    </script>
+    
+    <div id="notification" class="notification" style="display: none;"></div> <!-- Notification div should be here -->
+
     <nav>
         <ul class="nav-items">
             <li><a href="index.html">Home</a></li>
@@ -17,21 +27,21 @@
             <li><a href="rates.html">Rates</a></li>
         </ul>
         <div class="nav-buttons">
-            <a href="#" class="nav-btn login-btn">Log in</a>
-            <a href="#" class="nav-btn signup-btn">Sign up</a>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="nav-btn login-btn">Log in</a>
+            <a href="https://www.youtube.com/watch?v=6PLatPMoxGw" class="nav-btn signup-btn">Sign up</a>
         </div>
     </nav>
     <div class="part1">
         <h1>Tello Drone</h1>
         <div class="intro-container">
-            <p class="intro-text">Start a <span class="highlight">journey</span> into the world of drones!</p>
-            <p class="intro-subtext">Click <a href="challenges.html" class="subtext-link">here</a> to start</p>
+            <p class="intro-text">Start a journey into the world of drones!</p>
+            <p class="intro-sub">Click <a href="challenges.html" class="sub-link">here</a> to start</p>
         </div>
         <div class="part1-btn">       
              <a href="https://aut0cl1cking.github.io/fakefoodbyte.github.io/">
                 <button class="started_btn" id="startedBtn">Support my web</button>
             </a>
-            <a href="https://aut0cl1cking.github.io/notascame.github.io/">
+            <a href="https://scam.com">
                 <button class="started_btn" id="startedBtn">Buy me a coffee</button>
             </a>
         </div>

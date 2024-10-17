@@ -27,7 +27,6 @@
 }
 
 .draw-button:hover {
-    background-color: #226aaa;
     cursor: pointer;
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
@@ -50,25 +49,22 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
     overflow-y: auto;
-    transition: all 0.3s ease;
 }
 
 .cs.hidden {
     opacity: 0;
     visibility: hidden;
-    transform: translateX(20px);
 }
 
 .cs h2 {
-    color: #e0e0e0; /* Light color for better contrast */
+    color: #e0e0e0;
     margin-top: 0;
 }
 
 .cs p {
-    color: #b0b0b0; /* Lighter text for better readability */
+    color: #b0b0b0; 
 }
 
-/* IDE-like styling for the code container */
 .code-container {
     background-color: #2d2d2d;
     color: #d4d4d4;
